@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Modern-JS-Quiz</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">
+	        <span>Robot Battledome</span>
+	      </a>
+	    </div>
+	  </div>
+	</nav>
+	<div class="container-fluid">
+		<div id="battlefield-wrapper">
+
+			<div class= "row">
+				<div id="nameOne" class="col-md-4 player">
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Player 1</span>
+					  <input type="text" class="form-control" id="inputOne" placeholder="Enter Your Name" aria-describedby="basic-addon1">
+					</div>
+					<div class="playerEnter">
+						<button class="btn btn-info" id="enter1">Build Player 1</button>
+					</div>
+				</div> <!-- nameOne -->
+				<div id="playerOneSelect" class="col-md-1 robPic">
+					selected
+					robot
+				</div>
+				<div id="vs" class="col-md-2">
+					<h3>Vs.</h3>
+				</div>
+				<div id="playerTwoSelect" class="col-md-1 robPic">
+					selected
+					robot
+				</div>
+				<div id="nameTwo" class="col-md-4 player">
+					<div class="input-group">
+					  <input type="text" class="form-control" id="inputTwo" placeholder="Enter Your Name" aria-describedby="basic-addon2">
+					  <span class="input-group-addon" id="basic-addon2">Player 2</span>
+					</div>
+					<div class="playerEnter">
+						<button class="btn btn-info" id="enter2">Build Player 2</button>
+					</div>
+				</div> <!-- name -->
+			</div> <!-- row	 -->
+
+			
+			<div id="battlefield">
+				<div class="page-load">
+					<h1>Welcome to Robot Battledome!</h1>
+					<p>Enter a name and choose your robot to do battle.</p>
+				</div>
+
+				
+				<div class="robots-load">
+					<h3>Choose your robot:</h3>				
+					<div class="row">
+						<div class="col-md-4">
+							<button class="btn btn-primary robots" id="one">Robo-Model 1</button>
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-primary robots" id="two">Robo-Model 2</button>	
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-primary robots" id="three">Robo-Model 3</button>					
+						</div>												
+					</div> <!-- Robots row 1 -->
+					<div class="row">
+						<div class="col-md-4">
+							<button class="btn btn-primary robots" id="four">Robo-Model 4</button>
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-primary robots" id="five">Robo-Model 5</button>								
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-primary robots" id="six">Robo-Model 6</button>								
+						</div>						
+					</div> <!-- Robots row 2 -->
+				<div>
+
+
+				<div class="weapons-load">
+					<h3>Choose a weapon:</h3>
+					<div class="row">
+						<div class="col-md-4">
+							<button class="btn btn-default weapons" id="weapon-one">The Punisher</button>
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-default weapons" id="weapon-two">The Laugher</button>	
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-default weapons" id="weapon-three">Lucille</button>					
+						</div>												
+					</div> <!-- Weapons row 1 -->
+					<div class="row">
+						<div class="col-md-4">
+							<button class="btn btn-default weapons" id="weapon-four">Betsy</button>
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-default weapons" id="weapon-five">The De-limb-er-ator</button>								
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-default weapons" id="weapon-six">Norman</button>								
+						</div>						
+					</div> <!-- Weapons row 2 -->
+				<div>
+
+
+				<div class="mods-load">
+					<h3>Choose a modification:</h3>
+					<div class="row">
+						<div class="col-md-4">
+							<button class="btn btn-success mods" id="mod-one">Shadow</button>
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-success mods" id="mod-two">Sneaky</button>	
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-danger mods" id="mod-three">Double Fisted</button>					
+						</div>												
+					</div> <!-- Mods row 1 -->
+					<div class="row">
+						<div class="col-md-4">
+							<button class="btn btn-danger mods" id="mod-four">Hammer Stomp</button>
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-warning mods" id="mod-five">Force Shield</button>								
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-warning mods" id="mod-six">Clones</button>								
+						</div>						
+					</div> <!-- Mods row 2 -->
+					<div class="transition">
+						<div class="row">
+							<div class="col-md-12">
+								<button class="btn btn-default" id="create-2">Create Player 2</button>	
+								<button class="btn btn-default" id="battle-go">Battle</button>	
+							</div>						
+						</div>
+					</div> <!-- Transition	 -->	
+				</div> <!--  Mods-load	 -->
+
+
+				<div class="battle">
+					<div class="row">
+						<div class="col-md-12" id="header-bat">
+							<h3>Battle!!!</h3>
+						</div>
+					</div> <!-- Battle row 1 -->
+					<div class="row">
+						<div class="col-md-4 card">
+							<div id="player1-bat">
+							</div>
+						</div>
+						<div class="col-md-4 card">
+							<div id="bat-descrip">
+							</div>							
+						</div>
+						<div class="col-md-4 card">
+							<div id="player2-bat">
+							</div>							
+						</div>
+					</div> <!-- Battle row 2	 -->
+					<div class="row">
+						<div class="col-md-12">
+							<button class="btn btn-default" id="attack">Attack</button>	
+							<button class="btn btn-default" id="restart">Fight Again!</button>													
+						</div>
+					</div> <!-- Battle row 3 -->
+				</div> <!--  Battle	 -->
+
+
+			</div> <!-- battlefield -->
+		</div> <!-- battlefield-wrapper -->
+	</div> <!-- container fluid -->
+
+
+	<footer class="footer navbar-fixed-bottom">
+	     <div class="container-fluid">
+	     	<p class="copy">Copyright <span class="glyphicon glyphicon-copyright-mark"></span> Robot Battledome all rights reserved.  2016</p>
+	     </div>
+	</footer>
+	<script src="dist/bundle.js"></script>	
+</body>
+</html>
