@@ -1,11 +1,8 @@
 "use strict";
 
-// Need this for it to work.  Why does it with no module export?
 const Weapon = require('./weapons');
 
-let AddWeapon = {};
-
-AddWeapon.addWeapon = function(element, player) {
+module.exports.addWeapon = function(element, player) {
 	switch(element.id) {
 		case "weapon-one":
 			player.weapon = new Weapon.weaponOne();
@@ -30,5 +27,3 @@ AddWeapon.addWeapon = function(element, player) {
 	}
 	return player.weapon;
 };
-
-module.exports = AddWeapon;

@@ -3,9 +3,7 @@
 // Need this for it to work.  Why does it with no module export?
 const Modification = require('./mod');
 
-let AddMod = {};
-
-AddMod.addMod = function(element, player) {
+module.exports.addMod = function(element, player) {
 	switch(element.id) {
 		case "mod-one":
 			player.modification = new Modification.modOne();
@@ -30,5 +28,3 @@ AddMod.addMod = function(element, player) {
 	}
 	return player.modification;
 };
-
-module.exports = AddMod;

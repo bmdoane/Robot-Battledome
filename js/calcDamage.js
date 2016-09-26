@@ -7,9 +7,7 @@ const Model = require('./model');
 const Weapon = require('./weapons');
 const Modification = require('./mod');
 
-let Calc = {};
-// Decipher whether you will use this or calcStats
-Calc.calcDamage = function(attacker) {
+module.exports.calcDamage = (attacker) => {
 	let damage = 0;
 	console.log("attacker.model.typeDamage", attacker.model.typeDamage);
 	console.log("attacker.model.damageBonus", attacker.model.damage);
@@ -18,7 +16,6 @@ Calc.calcDamage = function(attacker) {
 
 	damage = attacker.model.typeDamage + attacker.model.damage + attacker.weapon.damage + attacker.modification.damageBonus;
 
-	return damage;
+	//return damage;
+	return Math.floor(Math.random() * (damage + 1));
 }
-
-module.exports = Calc;
