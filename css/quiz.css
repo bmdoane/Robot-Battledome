@@ -27,8 +27,8 @@ body {
 }
 
 /* Battleground */
-/*.hide {
-	display: hidden;
+/*.hidden {
+	display: none;
 }*/
 
 /* Select Row */
@@ -36,9 +36,10 @@ body {
 	text-align: center;
 }
 
-.robots-load {
+#robotsLoad {
 	text-align: center;
 }
+
  
 button {
 	margin: 20px;

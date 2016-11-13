@@ -18,14 +18,16 @@ const { battleRound } = require('./battleSequence.js')
 $(document).ready(function() {
 	// Page load
 	// How can I hide these so they won't show at load
-	// $('mods-load').hide();
-	// $('.weapons-load').hide();
-	// $('.robots-load').hide();
+	// $('#modsLoad').hide();
+	// $('#weaponsLoad').hide();
+	// $('#robotsLoad').hide();
+	// Try using addclass hidden jquery function!!!!!!!!
+	// .addClass and .removeClass
 	$('.page-load').show();
 	$('#inputOne').focus();
 	$('#attack').show()
 	$('#restart').hide()
-	$('#battle-go').hide()
+	$('#battle-go').hide() // Btn
 
 	let player = function() {
 		this.name = null;
