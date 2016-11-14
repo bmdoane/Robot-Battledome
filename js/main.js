@@ -16,14 +16,7 @@ const { battleRound } = require('./battleSequence.js')
 
 
 $(document).ready(function() {
-	// Page load
-	// How can I hide these so they won't show at load
-	// $('#modsLoad').hide();
-	// $('#weaponsLoad').hide();
-	// $('#robotsLoad').hide();
-	// Try using addclass hidden jquery function!!!!!!!!
-	// .addClass and .removeClass
-	$('.page-load').show();
+	$('#pageLoad').show();
 	$('#inputOne').focus();
 	$('#attack').show()
 	$('#restart').hide()
@@ -40,32 +33,36 @@ $(document).ready(function() {
 	let player2 = new player();
 	let selectedPlayer = {};
 
-
 	$('#enter1').on('click', function() {
 		selectedPlayer.name = $('#inputOne').val();
-		// $('.robots-load').removeClass('hide');
+		$('#pageLoad').addClass('hidden');
+		$('#robotsLoad').removeClass('hidden');
 	});
 
 	$('#enter2').on('click', function() {
 		selectedPlayer.name = $('#inputTwo').val();
 		// $('.robots-load').removeClass('hide');
+		$('#robotsLoad').removeClass('hidden');
 	});
 
 	$('.robots').on('click', function(event) {
 		addModel(event.target.closest('.robots'), selectedPlayer);
 		//console.log("selectedPlayerrob", selectedPlayer);
-		// $('.robots-load').addClass('hide');
-		// $('.weapons-load').removeClass('hide');
+		$('#robotsLoad').addClass('hidden');
+		$('#weaponsLoad').removeClass('hidden');
 	});
 
 	$('.weapons').on('click', function(event) {
 		addWeapon(event.target.closest('.weapons'), selectedPlayer);
 		//console.log("selectedPlayerweap", selectedPlayer);
+		$('#weaponsLoad').addClass('hidden');
+		$('#modsLoad').removeClass('hidden');				
 	});
 
 	$('.mods').on('click', function(event) {
 		addMod(event.target.closest('.mods'), selectedPlayer);
 		//console.log("selectedPlayermod", selectedPlayer);
+	$('#create-2').focus();				
 	});	
 
 	// Assign compiled stats to player1	
@@ -73,6 +70,7 @@ $(document).ready(function() {
 		calcStats(selectedPlayer);
 		player1 = selectedPlayer;
 		console.log("player1", player1);
+		$('#modsLoad').addClass('hidden');	
 		// Clear selected player object to build pl2
 		selectedPlayer = {};
 		$('#inputTwo').focus();
@@ -89,6 +87,8 @@ $(document).ready(function() {
 		// Initiating DOM PlayerCards
 		player1Card(player1);
 		player2Card(player2);
+
+		$('#battle').removeClass('hidden');
 	});
 
 	$('#attack').on('click', function() {
