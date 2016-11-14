@@ -27,18 +27,35 @@ body {
 }
 
 /* Battleground */
-/*.hide {
-	display: hidden;
-}*/
+.hidden {
+	display: none;
+}
 
 /* Select Row */
-.page-load {
+/*#pageLoad {
 	text-align: center;
 }
 
-.robots-load {
+#robotsLoad {
 	text-align: center;
 }
+
+#weaponsLoad {
+	text-align: center;
+}
+
+#modsLoad {
+	text-align: center;
+}
+
+#battle {
+	text-align: center;
+}*/
+
+.centerUp {
+	text-align: center;
+}
+
  
 button {
 	margin: 20px;
