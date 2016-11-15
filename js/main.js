@@ -62,8 +62,8 @@ $(document).ready(function() {
 	$('.mods').on('click', function(event) {
 		addMod(event.target.closest('.mods'), selectedPlayer);
 		//console.log("selectedPlayermod", selectedPlayer);
-		// You need to have an if statement to sort create-2 or battle btn
-	$('#create-2').focus();			
+		$('#create-2').focus();
+		$('#battle-go').focus();				
 	});	
 
 	// Assign compiled stats to player1	
@@ -84,11 +84,10 @@ $(document).ready(function() {
 		calcStats(selectedPlayer);
 		player2 = selectedPlayer;
 		console.log("player2", player2);
-
+		$('#modsLoad').addClass('hidden');	
 		// Initiating DOM PlayerCards
 		player1Card(player1);
 		player2Card(player2);
-
 		$('#battle').removeClass('hidden');
 	});
 
