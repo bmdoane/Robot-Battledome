@@ -95,6 +95,7 @@ $(document).ready(function() {
 		player1Card(player1);
 		player2Card(player2);
 		$('#battle').removeClass('hidden');
+		$('#attack').focus();		
 	});
 
 	$('#attack').on('click', function() {
