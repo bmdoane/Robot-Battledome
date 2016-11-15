@@ -22,15 +22,16 @@ $(document).ready(function() {
 	$('#restart').hide()
 	$('#battle-go').hide() // Btn
 
-	let player = function() {
+	// Constructor function
+	let Player = function() {
 		this.name = null;
 		this.model = null;
 		this.weapon = null;
 		this.modification = null;
 	};
 
-	let player1 = new player();
-	let player2 = new player();
+	let player1 = new Player();
+	let player2 = new Player();
 	let selectedPlayer = {};
 
 	$('#enter1').on('click', function() {
@@ -41,7 +42,6 @@ $(document).ready(function() {
 
 	$('#enter2').on('click', function() {
 		selectedPlayer.name = $('#inputTwo').val();
-		// $('.robots-load').removeClass('hide');
 		$('#robotsLoad').removeClass('hidden');
 	});
 
@@ -62,7 +62,8 @@ $(document).ready(function() {
 	$('.mods').on('click', function(event) {
 		addMod(event.target.closest('.mods'), selectedPlayer);
 		//console.log("selectedPlayermod", selectedPlayer);
-	$('#create-2').focus();				
+		// You need to have an if statement to sort create-2 or battle btn
+	$('#create-2').focus();			
 	});	
 
 	// Assign compiled stats to player1	
