@@ -76,7 +76,11 @@ $(document).ready(function() {
 		$('#modsLoad').addClass('hidden');	
 		// Clear selected player object to build pl2
 		selectedPlayer = {};
+		$('#inputTwo').prop('disabled', false);
+		$('#enter2').prop('disabled', false)					
 		$('#inputTwo').focus();
+		$('#inputOne').prop('disabled', true);
+		$('#enter1').prop('disabled', true)		
 		$('#create-2').hide()
 		$('#battle-go').show()
 	});
