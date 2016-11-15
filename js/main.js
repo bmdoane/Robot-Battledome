@@ -18,6 +18,8 @@ const { battleRound } = require('./battleSequence.js')
 $(document).ready(function() {
 	$('#pageLoad').show();
 	$('#inputOne').focus();
+	$('#inputTwo').prop('disabled', true)
+	$('#enter2').prop('disabled', true)	
 	$('#attack').show()
 	$('#restart').hide()
 	$('#battle-go').hide() // Btn
