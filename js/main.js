@@ -18,6 +18,8 @@ const { battleRound } = require('./battleSequence.js')
 $(document).ready(function() {
 	$('#pageLoad').show();
 	$('#inputOne').focus();
+	$('#inputTwo').prop('disabled', true)
+	$('#enter2').prop('disabled', true)	
 	$('#attack').show()
 	$('#restart').hide()
 	$('#battle-go').hide() // Btn
@@ -74,7 +76,11 @@ $(document).ready(function() {
 		$('#modsLoad').addClass('hidden');	
 		// Clear selected player object to build pl2
 		selectedPlayer = {};
+		$('#inputTwo').prop('disabled', false);
+		$('#enter2').prop('disabled', false)					
 		$('#inputTwo').focus();
+		$('#inputOne').prop('disabled', true);
+		$('#enter1').prop('disabled', true)		
 		$('#create-2').hide()
 		$('#battle-go').show()
 	});
@@ -89,6 +95,7 @@ $(document).ready(function() {
 		player1Card(player1);
 		player2Card(player2);
 		$('#battle').removeClass('hidden');
+		$('#attack').focus();		
 	});
 
 	$('#attack').on('click', function() {
